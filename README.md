@@ -1,4 +1,4 @@
-# 夢喰ばくらちゃんとねむねむノート🌙 — README
+# 夢喰ばくらちゃんとねむねむノート 🌙 — README
 
 ---
 
@@ -153,7 +153,7 @@ HTML のレイアウト、JS の枠を使い、アプリ用にデザインを直
 | weather         | string  | 天気（晴れ／曇り／雨など）     |
 | dream_type      | string  | 怖かった夢／いい夢             |
 | bakura_response | text    | ばくらちゃんの AI 返答（保存） |
-| dream_note      | text    |
+| dream_note      | text    | 夢日記（履歴）                 |
 
 ### 8-3. 技術選定の理由
 
