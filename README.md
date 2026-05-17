@@ -103,9 +103,13 @@
 
 #### ADV 風 UI のイメージ
 
-- PC イメージ ![トップ画面] (images/hometop-PC.png)
+## PC イメージ
 
-- SP イメージ ![トップ画面] (images/hometop-SP.png)
+![トップ画面] (images/hometop-PC.png)
+
+## SP イメージ
+
+![トップ画面] (images/hometop-SP.png)
 
 ### 本リリースで作る機能
 
