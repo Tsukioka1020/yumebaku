@@ -193,7 +193,6 @@ Figma：<https://www.figma.com/design/IM0r2RGB1q9HWGXRWqj5Q0/%E5%A4%A2%E5%96%B0%
 - [ ] 記事投稿機能
 - [ ] 記事編集機能
 - [ ] 記事削除機能
-- [ ] 記事削除機能
 - [ ] Open AI の API 連携によるメッセージ機能
 
 ### メールアドレス・パスワード変更確認項目
