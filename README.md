@@ -179,6 +179,6 @@
 
 ### ER 図
 
-https://gyazo.com/35ecae4513fa353cae98ecbad230702f
+https://gyazo.com/47c3fe4c21b5fdb3fcee19cf8f5b9f93
 
 - DB 設計で考えていた項目を参考に作成しています
