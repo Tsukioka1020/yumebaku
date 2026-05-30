@@ -166,11 +166,8 @@
 | --------------- | ------- | ------------------------------ |
 | user_id         | integer | ユーザーの紐付け               |
 | content         | text    | 夢の内容（テキスト）           |
-| condition       | string  | 体調（良い／普通／悪い）       |
-| weather         | string  | 天気（晴れ／曇り／雨など）     |
-| dream_type      | string  | 怖かった夢／いい夢             |
+| dream_type      | string  | 最高／普通／最悪               |
 | bakura_response | text    | ばくらちゃんの AI 返答（保存） |
-| dream_note      | text    | 夢日記（履歴）                 |
 
 ### 8-3. 技術選定の理由
 
@@ -179,3 +176,9 @@
   いため
 - フロントは ERB でシンプルにまとめ、開発速度を優先する
 - ADV 風 UI はポートフォリオでの実装経験を流用できるため工数を削減できる
+
+### ER 図
+
+https://gyazo.com/35ecae4513fa353cae98ecbad230702f
+
+- DB 設計で考えていた項目を参考に作成しています
