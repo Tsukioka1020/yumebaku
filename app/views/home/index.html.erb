@@ -1,3 +1,146 @@
-<h1>Home#index</h1>
-<p>テストページ</p>
-<p>Find me in app/views/home/index.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:url" content="https://tsukioka1020.github.io/my-portfolio/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="月丘ポートフォリオサイト" />
+<meta property="og:description" content="月丘_RUNTEQ生74B ポートフォリオサイト" />
+<meta property="og:site_name" content="月丘ポートフォリオサイト" />
+<meta property="og:image" content="https://raw.githubusercontent.com/Tsukioka1020/my-portfolio/refs/heads/main/img/noteimg.png" />
+<link rel="icon" href="./logo/tukioka_logo.png">
+<title>月丘ポートフォリオサイト</title>
+<link rel="stylesheet" href="css/loading.css">
+<link rel="stylesheet" href="css/top_text.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=settings" />
+<link href="https://fonts.googleapis.com/css2?family=Keania+One&family=M+PLUS+Rounded+1c&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+</head>
+<body id="app">
+<div class="game-screen">
+  <div class="background-layer" id="background"></div>
+  <div class="middle-layer" id="middle"></div>
+  <div id="time-display"></div>
+  <div class="character-container"> <img src="./img/dairi.webp" alt="キャラクター立ち絵" class="character-image" id="character">
+    <div class="speech-bubble" id="speechBubble">
+      <p id="speechText">こんにちは！</p>
+    </div>
+    </div>
+    <div class="text_display">
+        <div id="dialogueBox" class="dialogue-box">
+           <p id="dialogueText"></p>
+           <div class="dialogue-buttons">
+           </div>
+         </div>
+     </div>
+  <div class="main_frame">
+    <div class="menu-container">
+        <a href="#profile" class="menu-item profile_btn Slidein_Right">管理者<br>情報</a>
+        <a id="talkButton" class="menu-item talk_btn Slidein_Right">情報収集</a>
+        <a href="#album" class="menu-item imgwork_btn Slidein_Right">代行者</a>
+        <a href="#progress" class="menu-item task_btn Slidein_Right">作品</a>
+    </div>
+  </div>
+  <footer>
+<small>© 2025 Tsukioka All Rights Reserved</small>
+    </footer>
+</div>
+<span id="resetButton" class="material-symbols-outlined reset-button">
+    settings
+    </span>
+    <div id="resetModal" class="modal-overlay">
+        <div class="modal-content">
+            <p>⚠️ 会話履歴を全てリセットしますか？</p>
+            <div class="modal-actions">
+                <button id="confirmResetBtn" class="modal-btn confirm">はい</button>
+                <button id="cancelResetBtn" class="modal-btn cancel">いいえ</button>
+            </div>
+        </div>
+    </div>
+<div class="talk-container" id="talkContainer">
+    <button id="closeTalkBtn">×</button>
+</div>
+
+<section id="profile" class="content-section">
+    <div class="content-box">
+        <span class="batsu"></span>
+        <div class="content-wrap">
+            <div class="header-text-box" data-title="管理者情報"> 
+                <h1><span class="header-title-text"></span></h1>
+            </div>
+        <div class="text-box">
+            <img class="fadein" src="./img/my_800_1.webp" id="profileImage"></img>
+        <div class="profile-item">
+          <span>名前:</span>
+          <span class="profile-content" id="name">???</span>
+      </div>
+      <div class="profile-item">
+          <span>スキル:</span>
+          <span class="profile-content" id="skill">???</span>
+      </div>
+      <div class="profile-item">
+          <span>趣味:</span>
+          <span class="profile-content" id="hobby">???</span>
+      </div>
+      <div class="profile-item">
+          <span>好きなゲーム:</span>
+          <span class="profile-content" id="favoriteGame">???</span>
+      </div>
+      <div class="profile-item">
+        <span>作りたいもの:</span>
+        <span class="profile-content" id="concept">???</span>
+    </div>
+      <span>管理者より＞</span>
+      <p class="comment" id="profileComment">
+        □□□□□□
+    </span>
+    </p>
+    </div>
+    </div>
+    </div>
+</section>
+
+<section id="album" class="content-section">
+    <div class="content-box">
+        <span class="batsu"></span>
+        <div class="content-wrap">
+                <div class="header-text-box" data-title="代行者">
+            <h1><span class="header-title-text"></span></h1>
+        </div>
+        <div class="text-box">
+            <img class="fadein" src="./img/dairinin.png" id="daikousya"></img>
+            <h1>代行者</h1>
+            <p>アンドロイド</p>
+            <p>管理人の代わりに管理人の情報を提供してくれる</p>
+            <p>傷つけないために、握手する時は手袋をしてくれる</p>
+        </div>
+    </div>
+    </div>
+</section>
+
+<section id="progress" class="content-section">
+    <div class="content-box">
+        <span class="batsu"></span>
+        <div class="content-wrap">
+            <div class="header-text-box" data-title="作品">
+                <h1><span class="header-title-text"></span></h1>
+            </div>
+        <div class="text-box"><p>作成したアプリはまだありません</p></div>
+    </div>
+    </div>
+</section>
+
+<div id="notification" class="notification-container">
+    <p id="notificationText"></p>
+</div>
+
+<div class="badges" id="badges"></div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<%= javascript_include_tag "main" %>
+<%= javascript_include_tag "fade" %>
+</body>
+</html>
