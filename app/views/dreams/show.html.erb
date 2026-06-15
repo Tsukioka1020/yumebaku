@@ -1,0 +1,15 @@
+<h1>夢の記録 🌙</h1>
+
+<p><%= @dream.created_at.strftime("%Y/%m/%d") %></p>
+<p>気分：<%= @dream.dream_type %></p>
+<p>夢の内容：<%= @dream.content %></p>
+
+<% if @dream.bakura_response.present? %>
+  <div>
+    <h2>ばくらより 🌸</h2>
+    <p><%= @dream.bakura_response %></p>
+  </div>
+<% end %>
+
+<%= link_to "ねむねむノートへ", dreams_path %>
+<%= link_to "削除", dream_path(@dream), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>

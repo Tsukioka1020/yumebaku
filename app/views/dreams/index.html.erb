@@ -1,0 +1,12 @@
+<h1>ねむねむノート 📖</h1>
+
+<%= link_to "夢を話す", new_dream_path %>
+
+<% @dreams.each do |dream| %>
+  <div>
+    <p><%= dream.created_at.strftime("%Y/%m/%d") %></p>
+    <p><%= dream.dream_type %></p>
+    <p><%= dream.content %></p>
+    <%= link_to "詳細", dream_path(dream) %>
+  </div>
+<% end %>

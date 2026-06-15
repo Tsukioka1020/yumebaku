@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-    get "up" => "rails/health#show", as: :rails_health_check
+  get "up" => "rails/health#show", as: :rails_health_check
 
-    root "home#index"
-  end
+  devise_for :users
+
+  resources :dreams
+
+  root "home#index"
+end

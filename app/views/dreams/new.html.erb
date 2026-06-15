@@ -1,0 +1,15 @@
+<h1>夢を話して 🌙</h1>
+
+<%= form_with model: @dream do |f| %>
+  <div>
+    <%= f.label :content, "どんな夢を見たか教えてね" %>
+    <%= f.text_area :content, placeholder: "夢の内容を入力してください", rows: 5 %>
+  </div>
+
+  <div>
+    <%= f.label :dream_type, "夢はどうだった？" %>
+    <%= f.select :dream_type, [["最高 🌸", "最高"], ["普通 🌙", "普通"], ["最悪 😱", "最悪"]] %>
+  </div>
+
+  <%= f.submit "ばくらに聞かせる" %>
+<% end %>
