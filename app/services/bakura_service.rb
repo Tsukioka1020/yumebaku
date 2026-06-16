@@ -1,7 +1,7 @@
 class BakuraService
     def self.call(dream_content)
       client = OpenAI::Client.new(access_token: Rails.application.credentials.openai[:api_key])
-  
+
       response = client.chat(
         parameters: {
           model: "gpt-4o-mini",
@@ -27,7 +27,7 @@ class BakuraService
           ]
         }
       )
-  
+
       response.dig("choices", 0, "message", "content")
     end
-  end
+end
