@@ -1,6 +1,6 @@
 class DreamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dream, only: [:show, :destroy]
+  before_action :set_dream, only: [ :show, :destroy ]
 
   def index
     @dreams = current_user.dreams.order(created_at: :desc)
