@@ -15,8 +15,9 @@ class DreamsController < ApplicationController
 
   def create
     @dream = current_user.dreams.build(dream_params)
+    @dream.bakura_response = BakuraService.call(@dream.content)
     if @dream.save
-      redirect_to @dream, notice: "夢を記録したよ！"
+      redirect_to @dream, notice: "夢を記録したよ〜"
     else
       render :new, status: :unprocessable_entity
     end
@@ -24,7 +25,7 @@ class DreamsController < ApplicationController
 
   def destroy
     @dream.destroy
-    redirect_to dreams_path, notice: "削除したよ！"
+    redirect_to dreams_path, notice: "削除したよ〜"
   end
 
   private
