@@ -1,2 +1,39 @@
-<h1>夢喰ばくらちゃんとねむねむノート</h1>
-<p>ようこそ！</p>
+<div class="bg"></div>
+
+<div class="home visible" id="homeScreen">
+  <!-- 立ち絵エリア -->
+  <div class="character-area">
+    <div class="character-placeholder">
+      <%= image_tag "bakura-01.png", alt: "ばくらちゃん" %>
+    </div>
+
+    <!-- セリフウィンドウ -->
+    <div class="serif-window">
+      <div class="serif-name">ばくらちゃん</div>
+      <div class="serif-text" id="serifText">
+        だいじょうぶ　だいじょうぶ<br>ばくらちゃんが　怖い夢　ぜ〜んぶ<br>食べちゃったんだからさ！
+      </div>
+    </div>
+  </div>
+
+  <!-- 右エリア -->
+  <div class="right-area">
+    <div class="clock-circle">
+      <div class="clock-time">
+        <span id="clockHour">00</span><span class="clock-colon">:</span><span id="clockMin">00</span>
+      </div>
+    </div>
+    <div class="clock-time-mobile">
+      <span id="clockHourM">00</span><span class="clock-colon">:</span><span id="clockMinM">00</span>
+    </div>
+
+    <%= link_to "🌙 ばくらに話す", new_dream_path, class: "main-btn" %>
+
+    <div class="sub-btns">
+      <%= link_to "ねむねむ\nノート", dreams_path, class: "sub-btn" %>
+      <%= link_to "ばくら\nについて", dreams_path, class: "sub-btn" %>
+      <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "sub-btn" %>
+    </div>
+  </div>
+  <button class="settings-btn" onclick="alert('設定（準備中）')">⚙️</button>
+</div>
