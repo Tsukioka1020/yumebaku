@@ -1,15 +1,33 @@
-<h1>夢の記録 🌙</h1>
+<div class="bg"></div>
 
-<p><%= @dream.created_at.strftime("%Y/%m/%d") %></p>
-<p>気分：<%= @dream.dream_type %></p>
-<p>夢の内容：<%= @dream.content %></p>
+<div class="dream-page">
+  <div class="dream-modal show-modal">
+    <div class="show-date"><%= @dream.created_at.strftime("%Y/%m/%d") %></div>
 
-<% if @dream.bakura_response.present? %>
-  <div>
-    <h2>ばくらより 🌸</h2>
-    <p><%= @dream.bakura_response %></p>
+    <div class="show-type-badge <%= @dream.dream_type %>">
+      <% if @dream.dream_type == "最高" %>
+        最高 🌸
+      <% elsif @dream.dream_type == "普通" %>
+        普通 🌙
+      <% else %>
+        最悪 😱
+      <% end %>
+    </div>
+
+    <div class="show-content"><%= @dream.content %></div>
+
+    <% if @dream.bakura_response.present? %>
+      <div class="bakura-response-box">
+        <div class="bakura-response-name">ばくらより 🌸</div>
+        <div class="bakura-response-text"><%= @dream.bakura_response %></div>
+      </div>
+    <% end %>
+
+    <div class="show-actions">
+      <%= link_to "ねむねむノートへ", dreams_path, class: "dream-close-btn" %>
+      <%= link_to "削除", dream_path(@dream),
+          data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+          class: "delete-btn" %>
+    </div>
   </div>
-<% end %>
-
-<%= link_to "ねむねむノートへ", dreams_path %>
-<%= link_to "削除", dream_path(@dream), data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } %>
+</div>

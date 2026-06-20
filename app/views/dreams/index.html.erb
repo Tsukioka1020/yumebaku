@@ -1,12 +1,33 @@
-<h1>ねむねむノート 📖</h1>
+<div class="bg"></div>
 
-<%= link_to "夢を話す", new_dream_path %>
+<div class="dream-page">
+  <div class="dream-modal index-modal">
+    <h2>📖 ねむねむノート</h2>
 
-<% @dreams.each do |dream| %>
-  <div>
-    <p><%= dream.created_at.strftime("%Y/%m/%d") %></p>
-    <p><%= dream.dream_type %></p>
-    <p><%= dream.content %></p>
-    <%= link_to "詳細", dream_path(dream) %>
+    <% if @dreams.empty? %>
+      <div class="empty-message">
+        まだ夢の記録がないよ…<br>ばくらに話してみてね🌙
+      </div>
+    <% else %>
+      <div class="dream-list">
+        <% @dreams.each do |dream| %>
+          <div class="dream-list-item">
+            <div class="dream-list-left">
+              <span class="dream-list-date"><%= dream.created_at.strftime("%Y/%m/%d") %></span>
+              <span class="show-type-badge <%= dream.dream_type %>">
+                <% if dream.dream_type == "最高" %>最高 🌸
+                <% elsif dream.dream_type == "普通" %>普通 🌙
+                <% else %>最悪 😱
+                <% end %>
+              </span>
+            </div>
+            <div class="dream-list-content"><%= dream.content.truncate(30) %></div>
+            <%= link_to "くわしく", dream_path(dream), class: "dream-list-link" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= link_to "← ホームへもどる", root_path, class: "dream-close-btn" %>
   </div>
-<% end %>
+</div>

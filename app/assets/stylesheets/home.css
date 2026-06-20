@@ -245,6 +245,127 @@ a {
 .clock-time-mobile {
   display: none;
 }
+/* ====== 夢入力ページ ====== */
+.dream-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dream-modal {
+  background: var(--white-soft);
+  border: 3px solid var(--purple-light);
+  border-radius: 24px;
+  padding: 28px 24px;
+  width: 92%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 60px rgba(80, 40, 120, 0.35);
+}
+
+.dream-modal h2 {
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 22px;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.dream-textarea {
+  width: 100%;
+  height: 130px;
+  padding: 14px 16px;
+  background: #ece9f1;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 14px;
+  color: var(--text-dark);
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s;
+  line-height: 1.7;
+}
+
+.dream-textarea:focus {
+  border-color: var(--purple-light);
+  background: #f5f2fa;
+}
+
+.dream-type-label {
+  margin: 16px 0 8px;
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.dream-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.dream-radio {
+  display: none;
+}
+
+.dream-opt-btn {
+  flex: 1;
+  padding: 10px;
+  border: 2px solid var(--purple-light);
+  border-radius: 12px;
+  background: transparent;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  display: block;
+}
+
+.dream-radio:checked + .dream-opt-btn {
+  background: var(--purple-light);
+  color: #fff;
+  border-color: var(--purple);
+}
+
+.dream-submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #e8708a, #d4607a);
+  border: none;
+  border-radius: 14px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 18px rgba(212, 96, 122, 0.3);
+  transition: all 0.2s;
+}
+
+.dream-submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(212, 96, 122, 0.4);
+}
+
+.dream-close-btn {
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text-mid);
+  cursor: pointer;
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
 /* ====== スマホ対応（600px以下） ====== */
 @media (max-width: 600px) {
   /* ホーム画面：縦並びに */
@@ -677,4 +798,153 @@ a {
   40% {
     opacity: 1;
   }
+}
+
+/* ====== 夢の記録詳細ページ ====== */
+.show-modal {
+  max-width: 600px;
+}
+
+.show-date {
+  font-size: 12px;
+  color: var(--text-mid);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.show-type-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.show-type-badge.最高 {
+  background: rgba(232, 160, 180, 0.3);
+  color: var(--pink-deep);
+  border: 2px solid var(--pink);
+}
+
+.show-type-badge.普通 {
+  background: rgba(155, 127, 196, 0.2);
+  color: var(--purple);
+  border: 2px solid var(--purple-light);
+}
+
+.show-type-badge.最悪 {
+  background: rgba(100, 60, 130, 0.15);
+  color: var(--text-dark);
+  border: 2px solid rgba(100, 60, 130, 0.3);
+}
+
+.show-content {
+  background: #ece9f1;
+  border-radius: 14px;
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.bakura-response-box {
+  background: linear-gradient(135deg, #f5f0fb, #fde8f0);
+  border: 2px solid var(--purple-light);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.bakura-response-name {
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.bakura-response-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.show-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.delete-btn {
+  font-size: 12px;
+  color: #c04060;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+/* ====== ねむねむノート一覧ページ ====== */
+.index-modal {
+  max-width: 600px;
+  max-height: 80vh;
+}
+
+.empty-message {
+  text-align: center;
+  color: var(--text-mid);
+  font-size: 14px;
+  line-height: 2;
+  padding: 40px 0;
+}
+
+.dream-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.dream-list-item {
+  background: #ece9f1;
+  border-radius: 14px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dream-list-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dream-list-date {
+  font-size: 12px;
+  color: var(--text-mid);
+}
+
+.dream-list-content {
+  font-size: 13px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.dream-list-link {
+  font-size: 12px;
+  color: var(--purple);
+  text-decoration: none;
+  text-align: right;
+}
+
+.dream-list-link:hover {
+  text-decoration: underline;
 }
