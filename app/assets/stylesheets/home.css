@@ -948,3 +948,136 @@ a {
 .dream-list-link:hover {
   text-decoration: underline;
 }
+
+/* ====== ログインページ ====== */
+.login-page {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal {
+  background: var(--white-soft);
+  border: 3px solid var(--purple-light);
+  border-radius: 24px;
+  padding: 36px 28px;
+  width: 92%;
+  max-width: 480px;
+  box-shadow: 0 12px 60px rgba(80, 40, 120, 0.35);
+  text-align: center;
+  animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(0.85) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-title {
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+.modal-subtitle {
+  font-size: 13px;
+  color: var(--text-mid);
+  margin-bottom: 28px;
+  letter-spacing: 0.1em;
+}
+
+.input-group {
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: #ece9f1;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 15px;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.login-input:focus {
+  border-color: var(--purple-light);
+  background: #f5f2fa;
+}
+
+.login-input::placeholder {
+  color: #b0a0c0;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #e8708a, #d4607a);
+  border: none;
+  border-radius: 14px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  box-shadow: 0 4px 18px rgba(212, 96, 122, 0.35);
+  transition: all 0.2s ease;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #d4607a, #c04060);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(192, 64, 96, 0.4);
+}
+
+.error-msg {
+  background: #fde8ec;
+  border: 1px solid #f4b0be;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #c04060;
+  margin-bottom: 12px;
+  display: none;
+}
+
+.error-msg.show {
+  display: block;
+}
+
+.modal-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-links a {
+  font-size: 13px;
+  color: var(--pink-deep);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.modal-links a:hover {
+  color: var(--purple);
+  text-decoration: underline;
+}
