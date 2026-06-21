@@ -24,10 +24,11 @@
     <% end %>
 
     <div class="show-actions">
+      <%= link_to "編集する", edit_dream_path(@dream), class: "dream-close-btn" %>
       <%= link_to "ねむねむノートへ", dreams_path, class: "dream-close-btn" %>
       <%= link_to "削除", dream_path(@dream),
-          data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
-          class: "delete-btn" %>
+      data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" },
+      class: "delete-btn" %>
     </div>
   </div>
 </div>
