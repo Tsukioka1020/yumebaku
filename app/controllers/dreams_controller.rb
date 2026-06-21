@@ -1,6 +1,6 @@
 class DreamsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_dream, only: [ :show, :destroy ]
+  before_action :set_dream, only: [ :show, :edit, :update, :destroy ]
 
   def index
     @dreams = current_user.dreams.order(created_at: :desc)
@@ -20,6 +20,17 @@ class DreamsController < ApplicationController
       redirect_to @dream, notice: "夢を記録したよ〜"
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @dream.update(dream_params)
+      redirect_to @dream, notice: "夢を更新したよ〜"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
