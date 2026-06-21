@@ -8,8 +8,15 @@ function updateClock() {
   document.getElementById("clockHourM").textContent = h;
   document.getElementById("clockMinM").textContent = m;
 }
-updateClock();
-setInterval(updateClock, 1000);
+document.addEventListener("turbo:load", function () {
+  const clockHour = document.getElementById("clockHour");
+  if (!clockHour) return;
+
+  updateClock();
+  setInterval(updateClock, 1000);
+  document.getElementById("serifText").style.transition = "opacity 0.4s ease";
+  setInterval(rotateSerif, 30000);
+});
 
 // ばくらちゃんのランダムセリフ
 const SERIFS = [
