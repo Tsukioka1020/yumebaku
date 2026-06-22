@@ -3,7 +3,7 @@ class DreamsController < ApplicationController
   before_action :set_dream, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @dreams = current_user.dreams.order(created_at: :desc)
+    @dreams = current_user.dreams.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def show
