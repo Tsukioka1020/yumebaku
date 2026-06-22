@@ -500,6 +500,35 @@ a {
   text-decoration: none;
 }
 
+/* ====== ページネーション ====== */
+.pagination {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.pagination a,
+.pagination span {
+  color: var(--text-mid);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.pagination .current {
+  color: var(--bg-dark);
+  background-color: #ece9f1;
+  font-weight: 700;
+  padding: 0 5px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.pagination a:hover {
+  background-color: rgba(155, 127, 196, 0.2);
+}
 /* ====== 夢の記録詳細ページ ====== */
 .show-modal {
   max-width: 600px;

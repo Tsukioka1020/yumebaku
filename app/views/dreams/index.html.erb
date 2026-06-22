@@ -27,7 +27,8 @@
         <% end %>
       </div>
     <% end %>
-
+    
+    <%= paginate @dreams %>
     <%= link_to "← ホームへもどる", root_path, class: "dream-close-btn" %>
   </div>
 </div>
