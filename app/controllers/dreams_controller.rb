@@ -39,6 +39,11 @@ class DreamsController < ApplicationController
     redirect_to dreams_path, notice: "削除したよ〜"
   end
 
+  def destroy_all
+    current_user.dreams.destroy_all
+    redirect_to root_path, notice: "ねむねむノートの記録を全て削除したよ〜"
+  end
+
   private
 
   def set_dream

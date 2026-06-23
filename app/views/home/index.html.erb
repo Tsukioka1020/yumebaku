@@ -30,10 +30,39 @@
     <%= link_to "🌙 ばくらに話す", new_dream_path, class: "main-btn" %>
 
     <div class="sub-btns">
-      <%= link_to "ねむねむ\nノート", dreams_path, class: "sub-btn" %>
-      <%= link_to "ばくら\nについて", dreams_path, class: "sub-btn" %>
-      <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "sub-btn" %>
+      <%= link_to dreams_path, class: "sub-btn" do %>
+        ねむねむ<br>ノート
+       <% end %>
+    
+      <%= link_to dreams_path, class: "sub-btn" do %>
+      ばくら<br>について
+    <% end %>
     </div>
   </div>
-  <button class="settings-btn" onclick="alert('設定（準備中）')">⚙️</button>
+  <button class="settings-btn" id="settingsBtn">⚙️</button>
+</div>
+
+<!-- 設定モーダル -->
+<div class="settings-overlay" id="settingsOverlay">
+  <div class="settings-modal">
+    <div class="settings-title">設定</div>
+
+    <%= button_to "ログアウト", destroy_user_session_path,
+        method: :delete,
+        class: "settings-item-btn" %>
+
+    <%= button_to "ねむねむノートの履歴を削除",
+        destroy_all_dreams_path,
+        method: :delete,
+        data: { turbo_confirm: "記録を全て削除しますか？" },
+        class: "settings-item-btn danger" %>
+
+    <%= button_to "アカウントを削除",
+        registration_path(:user),
+        method: :delete,
+        data: { turbo_confirm: "アカウントを削除しますか？この操作は取り消せません。" },
+        class: "settings-item-btn danger" %>
+
+    <button class="settings-close-btn" id="settingsCloseBtn">× 閉じる</button>
+  </div>
 </div>

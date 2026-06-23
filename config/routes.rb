@@ -3,7 +3,11 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :dreams
+  resources :dreams do
+    collection do
+      delete :destroy_all
+    end
+  end
 
   root "home#index"
 end
