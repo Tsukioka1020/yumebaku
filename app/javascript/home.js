@@ -37,5 +37,25 @@ function rotateSerif() {
   }, 400);
 }
 
-document.getElementById("serifText").style.transition = "opacity 0.4s ease";
-setInterval(rotateSerif, 30000);
+// 設定モーダル
+document.addEventListener("turbo:load", function () {
+  const settingsBtn = document.getElementById("settingsBtn");
+  const settingsOverlay = document.getElementById("settingsOverlay");
+  const settingsCloseBtn = document.getElementById("settingsCloseBtn");
+
+  if (!settingsBtn) return;
+
+  settingsBtn.addEventListener("click", function () {
+    settingsOverlay.classList.add("visible");
+  });
+
+  settingsCloseBtn.addEventListener("click", function () {
+    settingsOverlay.classList.remove("visible");
+  });
+
+  settingsOverlay.addEventListener("click", function (e) {
+    if (e.target === settingsOverlay) {
+      settingsOverlay.classList.remove("visible");
+    }
+  });
+});

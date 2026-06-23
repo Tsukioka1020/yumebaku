@@ -6,3 +6,26 @@ ja:
       previous: "‹ 前"
       next: "次 ›"
       truncate: "…"
+  devise:
+    failure:
+      not_found_in_database: "メールアドレスまたはパスワードが違います"
+      invalid: "メールアドレスまたはパスワードが違います"
+      unauthenticated: "ログインしてください"
+      unconfirmed: "メールアドレスの確認が必要です"
+    sessions:
+      signed_in: "ログインしました"
+      signed_out: "ログアウトしました"
+    registrations:
+      signed_up: "アカウントを作成しました"
+      destroyed: "アカウントを削除しました"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "メールアドレスを入力してください"
+              taken: "このメールアドレスはすでに使われています"
+            password:
+              blank: "パスワードを入力してください"
+              too_short: "パスワードは%{count}文字以上で入力してください"
