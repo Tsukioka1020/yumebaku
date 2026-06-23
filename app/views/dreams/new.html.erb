@@ -5,6 +5,17 @@
     <h2>🌙 夢を話して</h2>
 
     <%= form_with model: @dream do |f| %>
+      <% if @dream.errors.any? %>
+        <div class="error-box">
+          <p class="error-title"><%= @dream.errors.count %>つのエラーがあります</p>
+          <ul class="error-list">
+            <% @dream.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
     <%= f.text_area :content,
           class: "dream-textarea",
           placeholder: "どんな夢を見たか教えてね…",
