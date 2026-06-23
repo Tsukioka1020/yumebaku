@@ -618,6 +618,20 @@ a {
   text-decoration: underline;
 }
 
+.dream-opt-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  margin: 0 auto 4px;
+  filter: invert(60%) sepia(10%) saturate(500%) hue-rotate(220deg)
+    brightness(90%);
+}
+
+.dream-radio:checked + .dream-opt-btn .dream-opt-icon {
+  opacity: 1;
+  filter: brightness(100%) drop-shadow(0 0 6px rgba(196, 168, 232, 0.9));
+}
+
 /* ====== ねむねむノート一覧ページ ====== */
 .index-modal {
   max-width: 600px;
@@ -763,6 +777,47 @@ a {
   padding: 8px;
 }
 
+/* ====== ばくらについてページ ====== */
+.show-modal.about-show {
+  max-width: 800px;
+  height: 60vh;
+}
+
+.about-info {
+  margin: 5em 3em;
+}
+
+.about-profile {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.about-img {
+  flex: 0 0 160px;
+  border-radius: 16px;
+  background: #ece9f1;
+}
+
+.about-img img {
+  width: auto;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.about-name {
+  font-family: "Kaisei Tokumin", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.about-desc {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--text-mid);
+}
 /* ====== スマホ対応（600px以下） ====== */
 @media (max-width: 600px) {
   .home {
@@ -832,5 +887,14 @@ a {
   .sub-btn {
     font-size: 12px;
     padding: 13px 6px;
+  }
+
+  /*ばくらについて*/
+  .about-profile {
+    flex-direction: column;
+  }
+
+  .about-info {
+    margin: 0;
   }
 }

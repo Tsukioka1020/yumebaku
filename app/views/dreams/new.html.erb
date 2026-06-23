@@ -5,24 +5,34 @@
     <h2>🌙 夢を話して</h2>
 
     <%= form_with model: @dream do |f| %>
-      <%= f.text_area :content,
+    <%= f.text_area :content,
           class: "dream-textarea",
           placeholder: "どんな夢を見たか教えてね…",
           rows: 5 %>
 
-      <div class="dream-type-label">夢はどうだった？</div>
-      <div class="dream-options">
-        <%= f.radio_button :dream_type, "最高", id: "type_best", class: "dream-radio" %>
-        <label for="type_best" class="dream-opt-btn">最高 🌸</label>
+    <div class="dream-type-label">夢はどうだった？</div>
 
-        <%= f.radio_button :dream_type, "普通", id: "type_normal", class: "dream-radio" %>
-        <label for="type_normal" class="dream-opt-btn">普通 🌙</label>
+    <div class="dream-options">
+      <%= f.radio_button :dream_type, "最高", id: "type_best", class: "dream-radio" %>
+      <label for="type_best" class="dream-opt-btn">
+        <%= image_tag "sentiment_very_satisfied_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg", class: "dream-opt-icon" %>
+        最高
+      </label>
 
-        <%= f.radio_button :dream_type, "最悪", id: "type_worst", class: "dream-radio" %>
-        <label for="type_worst" class="dream-opt-btn">最悪 😱</label>
-      </div>
+      <%= f.radio_button :dream_type, "普通", id: "type_normal", class: "dream-radio" %>
+      <label for="type_normal" class="dream-opt-btn">
+        <%= image_tag "sentiment_satisfied_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg", class: "dream-opt-icon" %>
+        普通
+      </label>
 
-      <%= f.submit "ばくらに聞かせる", class: "dream-submit-btn" %>
+      <%= f.radio_button :dream_type, "最悪", id: "type_worst", class: "dream-radio" %>
+      <label for="type_worst" class="dream-opt-btn">
+        <%= image_tag "sentiment_frustrated_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg", class: "dream-opt-icon" %>
+        最悪
+      </label>
+    </div>
+
+    <%= f.submit "ばくらに聞かせる", class: "dream-submit-btn" %>
     <% end %>
 
     <%= link_to "← もどる", root_path, class: "dream-close-btn" %>
