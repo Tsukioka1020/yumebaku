@@ -734,19 +734,23 @@ a {
   transition: all 0.2s ease;
 }
 
-.settings-item-btn:hover {
+.settings-item-btn.btn-1 {
   background: rgba(155, 127, 196, 0.85);
   color: #fff;
 }
 
+.settings-item-btn:hover {
+  background: rgba(155, 127, 196, 1);
+}
+
 .settings-item-btn.danger {
   border-color: rgba(212, 96, 122, 0.4);
-  color: #c04060;
+  background: rgba(212, 96, 122, 0.85);
+  color: #fff;
 }
 
 .settings-item-btn.danger:hover {
-  background: rgba(212, 96, 122, 0.85);
-  color: #fff;
+  background: rgba(212, 96, 122, 1);
 }
 
 .settings-close-btn {

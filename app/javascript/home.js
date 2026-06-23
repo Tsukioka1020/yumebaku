@@ -37,9 +37,6 @@ function rotateSerif() {
   }, 400);
 }
 
-document.getElementById("serifText").style.transition = "opacity 0.4s ease";
-setInterval(rotateSerif, 30000);
-
 // 設定モーダル
 document.addEventListener("turbo:load", function () {
   const settingsBtn = document.getElementById("settingsBtn");
