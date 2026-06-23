@@ -818,6 +818,34 @@ a {
   line-height: 2;
   color: var(--text-mid);
 }
+
+/* ====== エラーメッセージ ====== */
+.error-box {
+  background: #fde8ec;
+  border: 1px solid #f4b0be;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.error-title {
+  font-size: 12px;
+  color: #c04060;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.error-list {
+  list-style: none;
+  padding: 0;
+}
+
+.error-list li {
+  font-size: 11px;
+  color: #c04060;
+  padding: 2px 0;
+}
+
 /* ====== スマホ対応（600px以下） ====== */
 @media (max-width: 600px) {
   .home {

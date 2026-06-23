@@ -19,6 +19,11 @@ ja:
       signed_up: "アカウントを作成しました"
       destroyed: "アカウントを削除しました"
   activerecord:
+    attributes:
+      user:
+        email: "メールアドレス："
+        password: "パスワード："
+        password_confirmation: "パスワード（確認）："
     errors:
       models:
         user:
@@ -26,6 +31,14 @@ ja:
             email:
               blank: "メールアドレスを入力してください"
               taken: "このメールアドレスはすでに使われています"
+              invalid: "メールアドレスの形式が正しくありません"
             password:
               blank: "パスワードを入力してください"
               too_short: "パスワードは%{count}文字以上で入力してください"
+            password_confirmation:
+              confirmation: "パスワードが一致しません"
+  errors:
+    messages:
+      not_saved:
+        one: "1つのエラーがあります"
+        other: "%{count}つのエラーがあります"
