@@ -25,8 +25,8 @@ ja:
         password: "パスワード："
         password_confirmation: "パスワード（確認）："
       dream:
-        content: "夢の内容"
-        dream_type: "夢の種類"
+        content: "夢の内容："
+        dream_type: "夢の種類："
     errors:
       models:
         user:
@@ -45,6 +45,7 @@ ja:
           attributes:
             content:
               blank: "夢の内容を入力してください"
+              too_long: "夢の内容は%{count}文字以内で入力してください"
             dream_type:
               blank: "夢の種類を選択してください"
   errors:
