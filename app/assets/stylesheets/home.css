@@ -883,6 +883,60 @@ a {
   }
 }
 
+/* ====== 静的ページ（利用規約・プライバシーポリシー） ====== */
+.static-content {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.static-content h3 {
+  font-size: 14px;
+  color: var(--purple);
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.static-content p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.static-content ul {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.static-content li {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+.static-date {
+  text-align: right;
+  font-size: 11px;
+  color: var(--text-mid);
+  margin-top: 16px;
+}
+
+.static-links {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.static-links a {
+  color: var(--text-mid);
+  text-decoration: none;
+}
+
+.static-links a:hover {
+  text-decoration: underline;
+}
+
 /* ====== スマホ対応（600px以下） ====== */
 @media (max-width: 600px) {
   .home {

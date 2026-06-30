@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   root "home#index"
   get "about", to: "home#about"
+  get "terms", to: "static_pages#terms"
+  get "privacy", to: "static_pages#privacy"
 end
