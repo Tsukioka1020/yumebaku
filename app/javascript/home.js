@@ -15,20 +15,46 @@ document.addEventListener("turbo:load", function () {
   updateClock();
   setInterval(updateClock, 1000);
   document.getElementById("serifText").style.transition = "opacity 0.4s ease";
+  rotateSerif();
   setInterval(rotateSerif, 30000);
 });
 
-// ばくらちゃんのランダムセリフ
-const SERIFS = [
-  "だいじょうぶ　だいじょうぶ<br>ばくらちゃんが　怖い夢　ぜ〜んぶ<br>食べちゃったんだからさ！",
-  "んー？　また変な夢見たの？<br>ぜんぶ話して、ばくらが食べてあげるから",
+// ばくらちゃんのランダムセリフ（時間帯別）
+const SERIFS_MORNING = [
   "おはよ〜　ちゃんと眠れた？<br>ばくら、ずっとそばにいたよ",
+  "朝だよ〜　今日も一日<br>がんばろうね",
+  "ゆめのあとかたづけ、<br>てつだってあげようか？",
+];
+
+const SERIFS_NOON = [
+  "お昼だね〜　ちょっと眠くなる<br>時間だよね、わかるよ",
+  "今日見た夢、覚えてる？<br>忘れないうちに話してね",
+  "ばくら、お腹すいてきちゃった<br>夢、食べさせて〜",
+];
+
+const SERIFS_EVENING = [
+  "そろそろ眠る時間が<br>近づいてきたね",
+  "今日はどんな一日だった？<br>夜は静かに話を聞くよ",
   "怖い夢なんて　もったいない<br>ばくらに食べさせてくれたらよかったのに",
+];
+
+const SERIFS_NIGHT = [
+  "だいじょうぶ　だいじょうぶ<br>ばくらちゃんが　怖い夢　ぜ〜んぶ<br>食べちゃったんだからさ！",
+  "夜中だね…静かな時間<br>ゆっくりおやすみなさい",
   "悪夢は　全部ばくらのごはん<br>だから安心して眠っていいよ",
 ];
 
+function getSerifsByTime() {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 10) return SERIFS_MORNING;
+  if (hour >= 10 && hour < 17) return SERIFS_NOON;
+  if (hour >= 17 && hour < 23) return SERIFS_EVENING;
+  return SERIFS_NIGHT;
+}
+
 function rotateSerif() {
-  const text = SERIFS[Math.floor(Math.random() * SERIFS.length)];
+  const serifs = getSerifsByTime();
+  const text = serifs[Math.floor(Math.random() * serifs.length)];
   const el = document.getElementById("serifText");
   el.style.opacity = "0";
   setTimeout(() => {
