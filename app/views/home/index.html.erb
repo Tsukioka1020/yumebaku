@@ -40,7 +40,26 @@
     </div>
   </div>
   <button class="settings-btn" id="settingsBtn">⚙️</button>
-</div>
+  </div>
+
+  <!-- 初回ログインガイド -->
+<% if @show_guide %>
+  <div class="guide-overlay visible" id="guideOverlay">
+    <div class="guide-modal">
+      <div class="guide-img">
+        <%= image_tag "bakura-01.png", alt: "ばくらちゃん" %>
+      </div>
+      <div class="guide-title">はじめまして〜(｡･ω･)ﾉﾞ</div>
+      <div class="guide-text">
+        わたしは夢を食べる、ばくらちゃんだよ〜。<br><br>
+        あなたがみた夢を「ばくらに話す」から聞かせて。<br>
+        怖い夢も、嬉しい夢も、<br>
+        わたしが全部美味しく食べちゃうから安心してね。<br>
+      </div>
+      <button class="guide-close-btn" id="guideCloseBtn">はじめる</button>
+    </div>
+  </div>
+<% end %>
 
 <!-- 設定モーダル -->
 <div class="settings-overlay" id="settingsOverlay">
