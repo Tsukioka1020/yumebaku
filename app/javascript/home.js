@@ -85,3 +85,15 @@ document.addEventListener("turbo:load", function () {
     }
   });
 });
+
+// 初回ログインガイド
+document.addEventListener("turbo:load", function () {
+  const guideCloseBtn = document.getElementById("guideCloseBtn");
+  const guideOverlay = document.getElementById("guideOverlay");
+
+  if (!guideCloseBtn) return;
+
+  guideCloseBtn.addEventListener("click", function () {
+    guideOverlay.classList.remove("visible");
+  });
+});
