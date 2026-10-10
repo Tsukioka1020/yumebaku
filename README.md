@@ -158,7 +158,7 @@
 - フレームワーク：Ruby on Rails
 - フロントエンド ：ERB + HTML/CSS
 - DB ：PostgreSQL、認証 、Devise、外部 API OpenAI API（GPT-4o） API
-- ライブラリ：ruby-openai デプロイ先 ：Render（検討中）
+- ライブラリ：ruby-openai デプロイ先 ：Render
 
 ### 8-2. DB 設計
 
@@ -183,4 +183,4 @@
 
 https://gyazo.com/47c3fe4c21b5fdb3fcee19cf8f5b9f93
 
-- # DB 設計で考えていた項目を参考に作成しています
+- DB 設計で考えていた項目を参考に作成しています
